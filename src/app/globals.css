@@ -321,6 +321,7 @@ html[dir="rtl"] .roadmap-heading h3 {
 
 /* Clickable professional service cards */
 .service-card-clickable {
+  position: relative;
   display: block;
   color: inherit;
   text-decoration: none;
