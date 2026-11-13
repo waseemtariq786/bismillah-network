@@ -3,19 +3,37 @@ import Link from "next/link";
 export default function BrandLogo() {
   return (
     <Link href="/" className="brand" aria-label="Bismillah Network Home">
-      <svg viewBox="0 0 64 64" className="brand-mark" role="img" aria-label="BN Globe">
+      <svg viewBox="0 0 64 64" className="brand-mark" role="img" aria-label="Golden rotating Earth">
         <defs>
-          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#fff0b8"/>
+          <linearGradient id="earthGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#fff4c7"/>
             <stop offset="48%" stopColor="#d6ad58"/>
             <stop offset="100%" stopColor="#8e6324"/>
           </linearGradient>
+          <radialGradient id="earthShade" cx="30%" cy="25%">
+            <stop offset="0%" stopColor="#59431f"/>
+            <stop offset="100%" stopColor="#100e0a"/>
+          </radialGradient>
+          <clipPath id="earthClip">
+            <circle cx="32" cy="32" r="27"/>
+          </clipPath>
         </defs>
-        <circle cx="32" cy="32" r="28" fill="none" stroke="url(#gold)" strokeWidth="2"/>
-        <ellipse cx="32" cy="32" rx="13" ry="28" fill="none" stroke="url(#gold)" strokeWidth="1.4"/>
-        <path d="M5 32h54M10 19h44M10 45h44" fill="none" stroke="url(#gold)" strokeWidth="1.2"/>
-        <path d="M21 43V21h10c7 0 9 9 2 11 9 2 7 11-2 11H21zm7-17v5h3c3 0 3-5 0-5h-3zm0 9v5h4c4 0 4-5 0-5h-4z" fill="url(#gold)"/>
-        <path d="M39 43V21h5l8 13V21h5v22h-5l-8-13v13z" fill="url(#gold)"/>
+
+        <circle cx="32" cy="32" r="29" fill="url(#earthShade)" stroke="url(#earthGold)" strokeWidth="2"/>
+        <g clipPath="url(#earthClip)">
+          <g className="globe-spin">
+            <path d="M8 15L15 10 22 12 25 17 21 21 17 20 14 26 10 25 7 20Z
+              M25 24L31 20 37 22 40 27 37 32 39 38 35 46 31 44 29 37 25 33 23 28Z
+              M39 13L46 10 54 14 57 20 52 24 48 21 44 25 40 21Z
+              M43 29L49 27 55 31 53 37 48 39 45 35Z
+              M13 39L18 36 22 40 20 46 15 49 11 45Z"
+              fill="url(#earthGold)" stroke="#f8df9d" strokeWidth=".5"/>
+            <path d="M4 32H60M7 21H57M7 43H57" fill="none" stroke="#e6c477" strokeWidth=".65" opacity=".7"/>
+            <ellipse cx="32" cy="32" rx="12" ry="27" fill="none" stroke="#e6c477" strokeWidth=".8" opacity=".65"/>
+            <ellipse cx="32" cy="32" rx="23" ry="27" fill="none" stroke="#e6c477" strokeWidth=".55" opacity=".35"/>
+          </g>
+        </g>
+        <circle cx="32" cy="32" r="28" fill="none" stroke="url(#earthGold)" strokeWidth="1.5"/>
       </svg>
       <span className="brand-name">BISMILLAH <b>NETWORK</b><small>ONE NETWORK • ONE VISION</small></span>
     </Link>

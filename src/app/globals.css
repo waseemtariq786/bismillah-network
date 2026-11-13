@@ -937,3 +937,22 @@ html[dir="rtl"] .mobile-menu nav {
 .roadmap-card-clickable:hover .roadmap-background-image {
   opacity: .55;
 }
+
+/* Continuously rotating golden Earth */
+.brand-mark {
+  overflow: visible;
+}
+.globe-spin {
+  transform-box: view-box;
+  transform-origin: 32px 32px;
+  animation: golden-earth-rotate 12s linear infinite;
+}
+@keyframes golden-earth-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .globe-spin {
+    animation: none;
+  }
+}
