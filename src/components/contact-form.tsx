@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "./language-provider";
 
@@ -9,30 +9,26 @@ export default function ContactForm() {
   const ur = language === "ur";
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const keys = ["service", "department", "step", "module", "opportunity", "participation"];
-    const details = keys
-      .map((key) => {
-        const value = searchParams.get(key);
-        return value ? `${key}: ${value}` : "";
-      })
-      .filter(Boolean);
+  const keys = ["service", "department", "step", "module", "opportunity", "participation"];
+  const details = keys
+    .map((key) => {
+      const value = searchParams.get(key);
+      return value ? `${key}: ${value}` : "";
+    })
+    .filter(Boolean);
 
-    if (details.length) {
-      const selected = searchParams.get("service");
-      if (selected === "Website Development" || selected === "Mobile App Development") {
-        setService(selected);
-      } else {
-        setService("Other Project Discussion");
-      }
-      setMessage(details.join("\\n"));
-    }
-  }, [searchParams]);
+  const selected = searchParams.get("service");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("Website Development");
-  const [message, setMessage] = useState("");
+  const [service, setService] = useState(() =>
+    details.length
+      ? selected === "Website Development" || selected === "Mobile App Development"
+        ? selected
+        : "Other Project Discussion"
+      : "Website Development"
+  );
+  const [message, setMessage] = useState(() => details.join("\n"));
   const [status, setStatus] = useState("");
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {

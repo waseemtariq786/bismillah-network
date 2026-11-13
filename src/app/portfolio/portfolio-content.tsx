@@ -117,7 +117,7 @@ export default function PortfolioContent() {
         <div className="container cta-inner">
           <p className="eyebrow">{ur ? "آپ کا آئیڈیا اگلا ہو سکتا ہے" : "YOUR IDEA COULD BE NEXT"}</p>
           <h2>
-            {ur ? <>آئیے مل کر<br /><span>بامقصد کام کریں۔</span></> : <>Let's build<br /><span>something meaningful.</span></>}
+            {ur ? <>آئیے مل کر<br /><span>بامقصد کام کریں۔</span></> : <>Let&apos;s build<br /><span>something meaningful.</span></>}
           </h2>
           <Link href="/contact" className="button button-gold">
             {ur ? "پروجیکٹ پر بات کریں ↗" : "Discuss a Project ↗"}

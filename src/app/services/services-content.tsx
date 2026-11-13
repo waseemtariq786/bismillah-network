@@ -119,7 +119,7 @@ export default function ServicesContent() {
       <section className="cta-section">
         <div className="container cta-inner">
           <p className="eyebrow">{ur ? "کیا آپ کے ذہن میں کوئی پروجیکٹ ہے؟" : "HAVE A PROJECT IN MIND?"}</p>
-          <h2>{ur ? <>آئیے آپ کے <br /><span>آئیڈیا پر بات کریں۔</span></> : <>Let's discuss<br /><span>your idea.</span></>}</h2>
+          <h2>{ur ? <>آئیے آپ کے <br /><span>آئیڈیا پر بات کریں۔</span></> : <>Let&apos;s discuss<br /><span>your idea.</span></>}</h2>
           <Link href="/contact" className="button button-gold">
             {ur ? "BISMILLAH NETWORK سے رابطہ کریں ↗" : "Contact BISMILLAH NETWORK ↗"}
           </Link>
