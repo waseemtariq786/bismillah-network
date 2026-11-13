@@ -1004,3 +1004,107 @@ html[dir="rtl"] .mobile-menu nav {
     gap: 18px;
   }
 }
+
+
+/* BISMILLAH NETWORK: branding, mobile layout and zoom */
+html[dir="rtl"] .nav-wrap,
+html[dir="rtl"] .desktop-nav {
+  pointer-events: auto;
+}
+
+.brand { gap: 9px; min-width: 0; }
+.brand-name { white-space: nowrap; }
+.pak-flag { width: 34px; height: 25px; flex-shrink: 0; filter: drop-shadow(0 2px 5px #000); }
+.flag-cloth { transform-origin: 6px 14px; animation: pakistan-flag-wave 2.8s ease-in-out infinite; }
+@keyframes pakistan-flag-wave {
+  0%,100% { transform: skewY(0deg) scaleX(1); }
+  50% { transform: skewY(-5deg) scaleX(.94); }
+}
+.waseem-name {
+  display: block;
+  width: fit-content;
+  color: var(--gold2);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-style: italic;
+  animation: waseem-wave 3s ease-in-out infinite;
+}
+@keyframes waseem-wave {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.zoom-controls {
+  position: fixed;
+  z-index: 200;
+  right: 14px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(12,12,12,.94);
+  box-shadow: 0 5px 25px #0008;
+}
+.zoom-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #17140f;
+  color: var(--gold2);
+  font-size: 19px;
+  cursor: pointer;
+}
+.zoom-controls span { min-width: 40px; text-align: center; color: var(--white); font-size: 11px; }
+
+@media(max-width:760px) {
+  .container { width: calc(100% - 28px); min-width: 0; }
+  .nav-wrap { width: calc(100% - 20px); gap: 7px; }
+  .brand { gap: 5px; }
+  .brand-mark { width: 35px; height: 35px; }
+  .pak-flag { width: 25px; height: 19px; }
+  .brand-name { font-size: 9px; letter-spacing: 1px; }
+  .brand-name small { font-size: 6px; letter-spacing: 1px; }
+  .waseem-name { font-size: 9px; letter-spacing: 2px; }
+  .language-select { max-width: 76px; font-size: 10px; }
+  .home-hero .container { text-align: center; }
+  .home-hero h1 { letter-spacing: -1px; overflow-wrap: anywhere; }
+  .hero-description { margin-inline: auto; overflow-wrap: anywhere; }
+  .hero-actions, .hero-signature { justify-content: center; }
+  .service-grid, .project-grid, .detail-service-grid, .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .service-card { min-width: 0; padding: 17px; min-height: 245px; }
+  .service-card h3, .project-card h3, .detail-service h3 {
+    font-size: 17px; overflow-wrap: anywhere; letter-spacing: 0;
+  }
+  .service-card p, .detail-service>p { font-size: 12px; overflow-wrap: anywhere; }
+  .project-card { min-width: 0; min-height: 260px; padding: 15px; }
+  .project-card>div>span { overflow-wrap: anywhere; }
+  .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .value-grid article { min-width: 0; overflow-wrap: anywhere; }
+  .section-heading { align-items: center; text-align: center; }
+  .zoom-controls { right: 9px; bottom: 10px; }
+}
+@media(max-width:360px) {
+  .service-grid, .project-grid, .detail-service-grid, .portfolio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .brand-name { font-size: 8px; }
+}
+
+.brand-bismillah {
+  display: block;
+  color: var(--gold2);
+  font-family: "Noto Naskh Arabic", "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0;
+  direction: rtl;
+}
+@media(max-width:760px) {
+  .brand-bismillah { font-size: 10px; line-height: 1.5; }
+}
