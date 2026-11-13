@@ -6,7 +6,6 @@ import { languages, useLanguage } from "./language-provider";
 
 const links = [
   ["/", "home"],
-  ["/about", "about"],
   ["/services", "services"],
   ["/portfolio", "portfolio"],
   ["/projects", "projects"],
@@ -14,6 +13,7 @@ const links = [
   ["/join", "join"],
   ["/rules", "rules"],
   ["/contact", "contact"],
+  ["/about", "about"],
 ];
 
 export default function SiteHeader() {
