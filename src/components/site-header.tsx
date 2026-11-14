@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import BrandLogo from "./brand-logo";
 import { languages, useLanguage } from "./language-provider";
 
@@ -18,6 +20,18 @@ const links = [
 
 export default function SiteHeader() {
   const { language, setLanguage, t } = useLanguage();
+  const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+
+  const closeMobileMenu = () => {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  };
+
+  useEffect(() => {
+    closeMobileMenu();
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -39,13 +53,17 @@ export default function SiteHeader() {
           ))}
         </select>
         <Link href="/app" className="nav-cta">{t("portal")} <span>↗</span></Link>
-        <details className="mobile-menu">
+        <details className="mobile-menu" ref={mobileMenuRef}>
           <summary aria-label="Open navigation">☰</summary>
           <nav>
             {links.map(([href, key]) => (
-              <Link key={href} href={href}>{t(key)}</Link>
+              <Link key={href} href={href} onClick={closeMobileMenu}>
+                {t(key)}
+              </Link>
             ))}
-            <Link href="/app">{t("portal")} ↗</Link>
+            <Link href="/app" onClick={closeMobileMenu}>
+              {t("portal")} ↗
+            </Link>
           </nav>
         </details>
       </div>

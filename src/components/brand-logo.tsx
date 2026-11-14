@@ -43,7 +43,7 @@ export default function BrandLogo() {
         <span className="brand-bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
         BISMILLAH <b>NETWORK</b>
         <small>ONE NETWORK • ONE VISION</small>
-        <span className="waseem-name">Waseem</span>
+        <span className="waseem-name"><span className="wave-word" style={{["--wave-index" as string]: 0}}>Waseem</span></span>
       </span>
     </Link>
   );
