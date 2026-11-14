@@ -100,7 +100,7 @@ export default function Home() {
         <div className="hero-grid" /><div className="hero-glow" />
         <div className="container hero-content">
           <p className="eyebrow"><span className="eyebrow-line" /> {text.welcome}</p>
-          <h1>{text.hero1}<br /><span>{text.hero2}</span></h1>
+          <h1 className="water-float">{text.hero1}<br /><span>{text.hero2}</span></h1>
           <p className="hero-description">{text.heroDesc}</p>
           <div className="hero-actions">
             <Link href="/services" className="button button-gold">{text.explore} <span>↗</span></Link>
@@ -113,7 +113,7 @@ export default function Home() {
 
       <section className="intro-section section-pad">
         <div className="container intro-grid">
-          <div><p className="eyebrow">{text.who}</p><h2>{text.purpose}<br /><span>{text.purpose2}</span></h2></div>
+          <div><p className="eyebrow">{text.who}</p><h2 className="water-float">{text.purpose}<br /><span>{text.purpose2}</span></h2></div>
           <div className="intro-copy">
             <p>{text.intro1}</p><p>{text.intro2}</p>
             <Link href="/about" className="text-link">{text.story} <span>↗</span></Link>
@@ -132,26 +132,26 @@ export default function Home() {
 
       <section className="values-section section-pad">
         <div className="container">
-          <p className="eyebrow">{text.why}</p><h2 className="content-title">{text.built} <span>{text.purposeWord}</span></h2>
+          <p className="eyebrow">{text.why}</p><h2 className="content-title water-float">{text.built} <span>{text.purposeWord}</span></h2>
           <div className="value-grid">{text.values.map(([title,desc],i)=><article key={title}><b>{String(i+1).padStart(2,"0")}</b><h3>{title}</h3><p>{desc}</p></article>)}</div>
         </div>
       </section>
 
       <section className="mission-section section-pad">
         <div className="mission-glow" />
-        <div className="container mission-content"><p className="eyebrow">{text.ourPurpose}</p><h2>{text.mission}<br /><span>{text.mission2}</span></h2><p>{text.missionDesc}</p><Link href="/network" className="button button-outline">{text.discoverNetwork} ↗</Link></div>
+        <div className="container mission-content"><p className="eyebrow">{text.ourPurpose}</p><h2 className="water-float">{text.mission}<br /><span>{text.mission2}</span></h2><p>{text.missionDesc}</p><Link href="/network" className="button button-outline">{text.discoverNetwork} ↗</Link></div>
       </section>
 
       <section className="section-pad">
         <div className="container">
-          <div className="section-heading"><div><p className="eyebrow">{text.how}</p><h2>{text.reality} <span>{text.reality2}</span></h2></div></div>
+          <div className="section-heading"><div><p className="eyebrow">{text.how}</p><h2 className="water-float">{text.reality} <span>{text.reality2}</span></h2></div></div>
           <div className="value-grid">{text.process.map(([n,title,desc])=><article key={n}><b>{n}</b><h3>{title}</h3><p>{desc}</p></article>)}</div>
         </div>
       </section>
 
       <section className="project-preview section-pad">
         <div className="container">
-          <div className="section-heading"><div><p className="eyebrow">{text.work}</p><h2>{text.motion} <span>{text.motion2}</span></h2></div><Link href="/projects" className="text-link">{text.projects} ↗</Link></div>
+          <div className="section-heading"><div><p className="eyebrow">{text.work}</p><h2 className="water-float">{text.motion} <span>{text.motion2}</span></h2></div><Link href="/projects" className="text-link">{text.projects} ↗</Link></div>
           <div className="project-grid">
             <Link href="/projects" className="project-card project-one bn-home-card"><img className="project-card-image" src="/images/digital-platforms.jpg" alt="BISMILLAH NETWORK digital platform" /><span className="project-tag">{text.development}</span><div><p>{text.platform}</p><h3>BISMILLAH NETWORK</h3><span>{text.platformDesc} ↗</span></div></Link>
             <Link href="/emi-services-786" className="project-card project-two emi-home-card">
@@ -166,19 +166,19 @@ export default function Home() {
 
       <section className="section-pad">
         <div className="container content-grid">
-          <div><p className="eyebrow">{text.vision}</p><h2 className="content-title">{text.many}<br /><span>{text.possibilities}</span></h2></div>
+          <div><p className="eyebrow">{text.vision}</p><h2 className="content-title water-float">{text.many}<br /><span>{text.possibilities}</span></h2></div>
           <div className="prose"><p>{text.networkDesc}</p><Link href="/join" className="text-link">{text.joinLearn} ↗</Link></div>
         </div>
       </section>
 
       <section className="founder-section section-pad">
         <div className="container founder-inner">
-          <div><p className="eyebrow">{text.leadership}</p><h2>{text.driven}<br /><span>{text.visionBuilt}</span></h2></div>
+          <div><p className="eyebrow">{text.leadership}</p><h2 className="water-float">{text.driven}<br /><span>{text.visionBuilt}</span></h2></div>
           <div className="founder-card"><div className="founder-monogram">MWT</div><p className="eyebrow">{text.founder}</p><h3>Muhammad Waseem Tariq</h3><p>{text.founderDesc}</p></div>
         </div>
       </section>
 
-      <section className="cta-section"><div className="container cta-inner"><p className="eyebrow">{text.idea}</p><h2>{text.build}<br /><span>{text.meaningful}</span></h2><p className="hero-description" style={{marginInline:"auto"}}>{text.tell}</p><Link href="/contact" className="button button-gold">{text.discuss} ↗</Link></div></section>
+      <section className="cta-section"><div className="container cta-inner"><p className="eyebrow">{text.idea}</p><h2 className="water-float">{text.build}<br /><span>{text.meaningful}</span></h2><p className="hero-description" style={{marginInline:"auto"}}>{text.tell}</p><Link href="/contact" className="button button-gold">{text.discuss} ↗</Link></div></section>
     </main>
   );
 }

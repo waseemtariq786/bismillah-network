@@ -1108,3 +1108,20 @@ html[dir="rtl"] .desktop-nav {
 @media(max-width:760px) {
   .brand-bismillah { font-size: 10px; line-height: 1.5; }
 }
+
+/* Gentle water-like floating motion for key homepage headings */
+.water-float {
+  display: inline-block;
+  animation: water-float-motion 5.5s ease-in-out infinite;
+  transform-origin: 50% 55%;
+  will-change: transform;
+}
+@keyframes water-float-motion {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  22% { transform: translate3d(1px, -3px, 0) rotate(-0.25deg); }
+  50% { transform: translate3d(-1px, 1px, 0) rotate(0.2deg); }
+  76% { transform: translate3d(1px, -2px, 0) rotate(-0.15deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .water-float { animation: none; }
+}
