@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   applicationName: "BISMILLAH NETWORK",
   verification: {
     google: "E9-Zv5vYcTT2IratqiU0r60c7mHeeugmX1aPvV3oEn4",
+  other: {
+    "msvalidate.01": "A595074164747552AB2BF0FE19B591F7",
+  },
   },
   keywords: ["BISMILLAH NETWORK", "Website Development", "Mobile App Development", "Digital Platforms", "Technology", "Opportunities"],
   openGraph: {
