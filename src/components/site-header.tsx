@@ -41,6 +41,7 @@ export default function SiteHeader() {
           {links.map(([href, key]) => (
             <Link key={href} href={href}>{t(key)}</Link>
           ))}
+          <Link href="/mail">Mail</Link>
         </nav>
         <select
           className="language-select"
@@ -61,6 +62,7 @@ export default function SiteHeader() {
                 {t(key)}
               </Link>
             ))}
+            <Link href="/mail" onClick={closeMobileMenu}>Mail</Link>
             <Link href="/app" onClick={closeMobileMenu}>
               {t("portal")} ↗
             </Link>
