@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   },
   description: "BISMILLAH NETWORK creates professional websites and mobile applications, building connections through technology and opportunity. One Network • One Vision.",
   applicationName: "BISMILLAH NETWORK",
+  verification: {
+    google: "E9-Zv5vYcTT2IratqiU0r60c7mHeeugmX1aPvV3oEn4",
+  },
   keywords: ["BISMILLAH NETWORK", "Website Development", "Mobile App Development", "Digital Platforms", "Technology", "Opportunities"],
   openGraph: {
     title: "BISMILLAH NETWORK | One Network • One Vision",
