@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
 
 type Message = {
   id: string;
@@ -15,6 +15,7 @@ type Message = {
 };
 
 export default function MailPage() {
+  const supabase = createClient();
   const [user, setUser] = useState<any>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [tab, setTab] = useState("Inbox");
@@ -66,8 +67,8 @@ export default function MailPage() {
 
     try {
       const { data: recipientId, error: findError } = await supabase.rpc(
-        "find_user_id_by_email",
-        { target_email: to.trim() }
+        "find_user_id_by_username",
+        { target_username: to.trim().toLowerCase() }
       );
 
       if (findError) throw findError;
@@ -174,13 +175,16 @@ export default function MailPage() {
                 <>
                   <h2>New Message</h2>
                   <form className="mail-form" onSubmit={sendMessage}>
-                    <label>Recipient's registered account email</label>
+                    <label>Recipient's BISMILLAH username</label>
                     <input
-                      type="email"
+                      type="text"
                       required
+                      minLength={3}
+                      maxLength={20}
+                      pattern="[a-zA-Z0-9_]{3,20}"
                       value={to}
                       onChange={e => setTo(e.target.value)}
-                      placeholder="recipient@example.com"
+                      placeholder="e.g. waseemtariq"
                     />
                     <label>Subject</label>
                     <input

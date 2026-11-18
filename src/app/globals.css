@@ -1374,3 +1374,238 @@ html[dir="rtl"] .desktop-nav {
   .mail-button-outline { padding: 9px 12px; font-size: 12px; }
   .mail-tab { flex: 1; padding: 11px 9px; font-size: 13px; }
 }
+
+/* Central Super Admin Dashboard */
+.admin-shell {
+  min-height: 75vh;
+  padding: 48px 18px 70px;
+  background: var(--bg, #080d0b);
+  color: var(--white, #f5f3eb);
+}
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.admin-heading { margin-bottom: 30px; }
+.admin-kicker {
+  color: var(--gold, #d6ad58);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.admin-heading h1 {
+  margin: 10px 0;
+  font-size: clamp(28px, 5vw, 42px);
+}
+.admin-heading h1 span { color: var(--gold, #d6ad58); }
+.admin-heading p, .admin-welcome p {
+  color: var(--muted, #aaa);
+  font-size: 13px;
+}
+.admin-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  border: 1px solid var(--line, #343a35);
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+}
+.admin-welcome h2 { margin: 0 0 7px; font-size: 18px; }
+.admin-welcome p { margin: 0; overflow-wrap: anywhere; }
+.admin-status {
+  color: var(--gold, #d6ad58);
+  border: 1px solid var(--gold, #d6ad58);
+  border-radius: 30px;
+  padding: 7px 11px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.admin-section-title, .admin-products h2 {
+  margin: 34px 0 17px;
+  font-size: 19px;
+}
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.admin-card {
+  padding: 19px;
+  border: 1px solid var(--line, #343a35);
+  border-radius: 12px;
+  background: rgba(255,255,255,.025);
+}
+.admin-card span, .admin-card small {
+  display: block;
+  color: var(--muted, #aaa);
+  font-size: 12px;
+}
+.admin-card strong {
+  display: block;
+  margin: 13px 0 5px;
+  color: var(--gold, #d6ad58);
+  font-size: 30px;
+}
+.admin-card small { font-size: 10px; }
+.admin-products { margin-top: 35px; }
+.admin-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 4px;
+  border-top: 1px solid var(--line, #343a35);
+}
+.admin-product h3 { margin: 0 0 6px; font-size: 14px; }
+.admin-product p { margin: 0; color: var(--muted, #aaa); font-size: 12px; }
+.admin-product a {
+  color: var(--gold, #d6ad58);
+  font-size: 12px;
+}
+.admin-note {
+  margin-top: 25px;
+  color: var(--muted, #aaa);
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media(max-width:650px) {
+  .admin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-welcome { align-items: flex-start; flex-direction: column; }
+}
+@media(max-width:360px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}
+
+/* Department management */
+.admin-back-link { color: var(--gold, #d6ad58); font-size: 13px; }
+.admin-management-panel {
+  margin: 18px 0;
+  padding: 22px;
+  border: 1px solid var(--line, #343a35);
+  border-radius: 13px;
+  background: rgba(255,255,255,.025);
+}
+.admin-management-panel h2 { margin: 0 0 18px; font-size: 18px; }
+.admin-form { display: flex; flex-direction: column; gap: 10px; }
+.admin-form label { color: var(--muted, #aaa); font-size: 12px; }
+.admin-form input:not([type="checkbox"]),
+.admin-form textarea {
+  width: 100%;
+  padding: 12px;
+  color: var(--white, #f5f3eb);
+  background: rgba(0,0,0,.2);
+  border: 1px solid var(--line, #343a35);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+}
+.admin-form input:focus, .admin-form textarea:focus {
+  outline: 1px solid var(--gold, #d6ad58);
+}
+.admin-action-button, .admin-delete-button {
+  width: fit-content;
+  padding: 11px 17px;
+  border: 1px solid var(--gold, #d6ad58);
+  border-radius: 8px;
+  color: #171108;
+  background: var(--gold, #d6ad58);
+  font-weight: 700;
+  cursor: pointer;
+}
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 5px 0;
+}
+.admin-delete-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 17px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line, #343a35);
+}
+.admin-delete-button {
+  color: #fff;
+  background: #7c2929;
+  border-color: #a34a4a;
+}
+.admin-delete-form small, .admin-empty {
+  color: var(--muted, #aaa);
+  font-size: 11px;
+}
+.admin-feedback {
+  margin: 18px 0;
+  padding: 12px;
+  border: 1px solid var(--gold, #d6ad58);
+  border-radius: 8px;
+  color: var(--gold, #d6ad58);
+  font-size: 13px;
+}
+
+/* BISMILLAH MAIL password controls and mobile click priority */
+.mail-login-panel {
+  position: relative;
+  z-index: 201;
+}
+.mail-password-wrap {
+  position: relative;
+  width: 100%;
+}
+.mail-password-wrap input {
+  padding-right: 72px !important;
+}
+.mail-password-toggle {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid var(--gold);
+  border-radius: 7px;
+  padding: 5px 9px;
+  background: #17130b;
+  color: var(--gold2);
+  cursor: pointer;
+  z-index: 2;
+}
+.mail-password-strength {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.mail-strength-track {
+  height: 6px;
+  border-radius: 10px;
+  background: #333;
+  overflow: hidden;
+}
+.mail-strength-fill {
+  height: 100%;
+  transition: width .2s ease;
+}
+.strength-weak { background: #d9534f; }
+.strength-medium { background: #d6ad58; }
+.strength-strong { background: #35a66a; }
+.mail-forgot-button {
+  display: block;
+  margin-top: 12px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold2);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mail-forgot-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+.mail-login-panel button,
+.mail-login-panel input {
+  touch-action: manipulation;
+}
