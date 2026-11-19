@@ -120,18 +120,13 @@ export default function Home() {
           </div>
 
           <div className={`hero-stage ${activeScene}`}>
-            <button type="button" className="hero-object hero-table-object" aria-label="Change scene using table" onClick={() => setActiveScene(activeScene === "network" ? "vision" : "network")}>
-              <img src="/images/hero/table.png" alt="Three dimensional golden wooden table" />
-            </button>
+            <img className="hero-table" src="/images/hero/table.png" alt="Golden wooden table" />
             <div className={`hero-network-art ${activeScene === "network" ? "scene-active" : ""}`}>
-              <button type="button" className="hero-object hero-globe-object" aria-label="Show One Network" onClick={() => setActiveScene("network")}>
-                <img className="hero-globe-image" src="/images/hero/globe.png" alt="Three dimensional golden Earth globe" />
-              </button>
+              <img className="hero-globe-image" src="/images/hero/globe.png" alt="Golden Earth globe" />
+              <img className="hero-rings-image" src="/images/hero/rings.png" alt="Two golden orbital rings" />
             </div>
             <div className={`hero-rose-art ${activeScene === "vision" ? "scene-active" : ""}`}>
-              <button type="button" className="hero-object hero-rose-object" aria-label="Show One Vision" onClick={() => setActiveScene("vision")}>
-                <img src="/images/hero/rose.png" alt="Three dimensional pink blooming rose" />
-              </button>
+              <img src="/images/hero/rose.png" alt="Pink rose blooming on the table" />
             </div>
             <div className="hero-stage-glow" />
           </div>
