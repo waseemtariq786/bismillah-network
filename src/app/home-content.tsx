@@ -103,18 +103,6 @@ export default function Home() {
         <div className="hero-glow" />
 
         <div className="container hero-layout">
-          <div className={`hero-stage ${activeScene}`}>
-            <button type="button" className="hero-object hero-table-object" aria-label="Wooden table" onClick={() => setActiveScene(activeScene === "network" ? "vision" : "network")}>
-              <img src="/images/hero/table.png" alt="Golden wooden table" />
-            </button>
-            <button type="button" className={`hero-object hero-globe-object ${activeScene === "network" ? "globe-active" : ""}`} aria-label="One Network: rotate globe" onClick={() => setActiveScene("network")}>
-              <img src="/images/hero/globe.png" alt="Three dimensional golden Earth" />
-            </button>
-            <button type="button" className={`hero-object hero-rose-object ${activeScene === "vision" ? "rose-active" : ""}`} aria-label="One Vision: bloom rose" onClick={() => setActiveScene("vision")}>
-              <img src="/images/hero/rose.png" alt="Pink blooming rose" />
-            </button>
-            <div className="hero-stage-glow" />
-          </div>
           <div className="hero-content">
             <p className="eyebrow"><span className="eyebrow-line" /> {text.welcome}</p>
             <h1 className="water-float">{text.hero1}<br /><span><span className="wave-word" style={{["--wave-index" as string]: 0}}>{text.hero2}</span></span></h1>
@@ -129,6 +117,23 @@ export default function Home() {
               <button type="button" className={`hero-mode ${activeScene === "vision" ? "selected" : ""}`} onClick={() => setActiveScene("vision")}>ONE VISION</button>
             </div>
             <p className="hero-hint">{ur ? "حرکت دیکھنے کے لیے عنوان منتخب کریں" : "SELECT A VISION TO EXPERIENCE THE MOTION"}</p>
+          </div>
+
+          <div className={`hero-stage ${activeScene}`}>
+            <button type="button" className="hero-object hero-table-object" aria-label="Change scene using table" onClick={() => setActiveScene(activeScene === "network" ? "vision" : "network")}>
+              <img src="/images/hero/table.png" alt="Three dimensional golden wooden table" />
+            </button>
+            <div className={`hero-network-art ${activeScene === "network" ? "scene-active" : ""}`}>
+              <button type="button" className="hero-object hero-globe-object" aria-label="Show One Network" onClick={() => setActiveScene("network")}>
+                <img className="hero-globe-image" src="/images/hero/globe.png" alt="Three dimensional golden Earth globe" />
+              </button>
+            </div>
+            <div className={`hero-rose-art ${activeScene === "vision" ? "scene-active" : ""}`}>
+              <button type="button" className="hero-object hero-rose-object" aria-label="Show One Vision" onClick={() => setActiveScene("vision")}>
+                <img src="/images/hero/rose.png" alt="Three dimensional pink blooming rose" />
+              </button>
+            </div>
+            <div className="hero-stage-glow" />
           </div>
         </div>
         <div className="hero-index">BN — 001 / DIGITAL INNOVATION</div>
