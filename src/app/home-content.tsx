@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { useLanguage } from "@/components/language-provider";
 
 export default function Home() {
   const { language } = useLanguage();
   const ur = language === "ur";
-  const [activeScene, setActiveScene] = useState<"network" | "vision">("network");
 
   const text = {
     welcome: ur ? "بسم اللہ نیٹ ورک میں خوش آمدید" : "WELCOME TO BISMILLAH NETWORK",
@@ -99,37 +97,16 @@ export default function Home() {
   return (
     <main>
       <section className="home-hero">
-        <div className="hero-grid" />
-        <div className="hero-glow" />
-
-        <div className="container hero-layout">
-          <div className="hero-content">
-            <p className="eyebrow"><span className="eyebrow-line" /> {text.welcome}</p>
-            <h1 className="water-float">{text.hero1}<br /><span><span className="wave-word" style={{["--wave-index" as string]: 0}}>{text.hero2}</span></span></h1>
-            <p className="hero-description">{text.heroDesc}</p>
-            <div className="hero-actions">
-              <Link href="/services" className="button button-gold">{text.explore} <span>↗</span></Link>
-              <Link href="/contact" className="button button-outline">{text.conversation}</Link>
-            </div>
-            <div className="hero-signature">
-              <button type="button" className={`hero-mode ${activeScene === "network" ? "selected" : ""}`} onClick={() => setActiveScene("network")}>ONE NETWORK</button>
-              <i />
-              <button type="button" className={`hero-mode ${activeScene === "vision" ? "selected" : ""}`} onClick={() => setActiveScene("vision")}>ONE VISION</button>
-            </div>
-            <p className="hero-hint">{ur ? "حرکت دیکھنے کے لیے عنوان منتخب کریں" : "SELECT A VISION TO EXPERIENCE THE MOTION"}</p>
+        <div className="hero-grid" /><div className="hero-glow" />
+        <div className="container hero-content">
+          <p className="eyebrow"><span className="eyebrow-line" /> {text.welcome}</p>
+          <h1 className="water-float">{text.hero1}<br /><span><span className="wave-word" style={{["--wave-index" as string]: 0}}>{text.hero2}</span></span></h1>
+          <p className="hero-description">{text.heroDesc}</p>
+          <div className="hero-actions">
+            <Link href="/services" className="button button-gold">{text.explore} <span>↗</span></Link>
+            <Link href="/contact" className="button button-outline">{text.conversation}</Link>
           </div>
-
-          <div className={`hero-stage ${activeScene}`}>
-            <img className="hero-table" src="/images/hero/table.png" alt="Golden wooden table" />
-            <div className={`hero-network-art ${activeScene === "network" ? "scene-active" : ""}`}>
-              <img className="hero-globe-image" src="/images/hero/globe.png" alt="Golden Earth globe" />
-              <img className="hero-rings-image" src="/images/hero/rings.png" alt="Two golden orbital rings" />
-            </div>
-            <div className={`hero-rose-art ${activeScene === "vision" ? "scene-active" : ""}`}>
-              <img src="/images/hero/rose.png" alt="Pink rose blooming on the table" />
-            </div>
-            <div className="hero-stage-glow" />
-          </div>
+          <div className="hero-signature"><span>ONE NETWORK</span><i /><span>ONE VISION</span></div>
         </div>
         <div className="hero-index">BN — 001 / DIGITAL INNOVATION</div>
       </section>
